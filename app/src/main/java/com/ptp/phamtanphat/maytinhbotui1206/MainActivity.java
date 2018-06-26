@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         //Lay du lieu trong edittext
 
+        //Cap nhat code : Ctrl + K
 
         btnCong.setOnClickListener(new View.OnClickListener() {
             @Override
