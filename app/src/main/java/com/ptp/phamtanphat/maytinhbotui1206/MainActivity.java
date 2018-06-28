@@ -49,15 +49,36 @@ public class MainActivity extends AppCompatActivity {
 //                Hien thi thong bao cho nguoi dung biet
 //                Toast.makeText(MainActivity.this, "Chao", Toast.LENGTH_SHORT).show();
 //                Toast.makeText(MainActivity.this,"Chao android",Toast.LENGTH_LONG).show();
-
-                String num1 = edtNum1.getText().toString();
-                String num2 = edtNum2.getText().toString();
-
-                if ( !num1.equals("") || !num2.equals("")){
-                    int ketqua = Integer.parseInt(num1) + Integer.parseInt(num2);
-                    txtKetqua.setText(String.valueOf(ketqua));
-                }
+               tinhtoan("+");
             }
         });
+        btnTru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tinhtoan("-");
+            }
+        });
+    }
+
+    // Cach tao 1 phuong thuc
+    private void tinhtoan(String pheptinh) {
+        String num1 = edtNum1.getText().toString();
+        String num2 = edtNum2.getText().toString();
+
+        if (num1.equals("") && num2.equals("")) {
+            Toast.makeText(MainActivity.this, "Rong!", Toast.LENGTH_SHORT).show();
+        } else {
+            int ketqua = 0 ;
+            if (pheptinh.equals("+")){
+                ketqua = Integer.parseInt(num1) + Integer.parseInt(num2);
+            }else if (pheptinh.equals("-")){
+                ketqua = Integer.parseInt(num1) - Integer.parseInt(num2);
+            }else if (pheptinh.equals("*")){
+                ketqua = Integer.parseInt(num1) * Integer.parseInt(num2);
+            }else if (pheptinh.equals("/")){
+                ketqua = Integer.parseInt(num1) / Integer.parseInt(num2);
+            }
+            txtKetqua.setText(String.valueOf(ketqua));
+        }
     }
 }
