@@ -58,6 +58,18 @@ public class MainActivity extends AppCompatActivity {
                 tinhtoan("-");
             }
         });
+        btnNhan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tinhtoan("*");
+            }
+        });
+        btnChia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tinhtoan("/");
+            }
+        });
     }
 
     // Cach tao 1 phuong thuc
